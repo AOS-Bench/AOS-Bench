@@ -1,0 +1,24 @@
+# V1-0 merged-stream hard blacklist.
+#
+# Exact task IDs below are excluded from new V1-0 stream sampling and from the
+# REFINE replacement candidate pool. Existing streams containing one of these
+# tasks must replace it before Docker build or Oracle verification can pass the
+# loop gate.
+#
+#
+# 2026-09-15 REVISION: the two wildclawbench jigsaw entries below are REMOVED.
+# They were added 2026-07-30 as "Heavy Oracle failures", but their graders call
+# an LLM vision judge and no judge was provisioned at that time, so they scored
+# 0 for a reason indistinguishable from a wrong answer. A judge is now verified
+# end to end (gemini-3.5-flash for image_url requests via an OpenAI-compatible gateway), and both
+# tasks are listed in the oracle-sweep launcher's
+# WILDCLAW_VISION_JUDGE_TASK_IDS. They must be re-measured WITH the judge
+# before any conclusion about them is drawn.
+#
+# The two entries that remain were verified still failing at reward 0.0 in the
+# 2026-09-12 oracle replay (r4), i.e. their failure is independent of the judge.
+#
+# Added 2026-07-30: repeated Heavy merged-stream Oracle failures. The best
+# Heavy candidate reached 16/20 and these were its four remaining L3 failures.
+skillsbench-civ6-adjacency-optimizer
+terminalworld-tw_717308

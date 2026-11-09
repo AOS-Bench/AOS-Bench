@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AOSBench Eval Monitor</title>
+  <!-- Every client-side URL is resolved against this, so the dashboard works
+       both at the server root and behind a path-prefixing reverse proxy (for
+       example a code-server that exposes it as /proxy/<port>/). With absolute "/api/..."
+       and "/static/..." paths the page still loaded but every fetch and the
+       SSE stream resolved to the proxy host's root instead of the prefix, so
+       the UI rendered with all counters at 0 and stayed on "connecting…".
+       Keep this tag and keep the asset/API paths below relative. -->
+  <base href="./" />
+  <link rel="stylesheet" href="static/style.css?v=20260914-relpaths" />
+</head>
+<body>
+  <header>
+    <h1>AOSBench Eval Monitor</h1>
+    <div id="jobs-bar">
+      <span id="jobs-dir">jobs_dir: …</span>
+      <span id="connection-state" class="conn-pending">connecting…</span>
+      <span id="host-resource-status" class="host-resource-status">Host CPU – · Mem –</span>
+    </div>
+    <nav>
+      <button data-tab="overview" class="active">Overview</button>
+      <button data-tab="trial">Trial Detail</button>
+      <button data-tab="errors">Errors</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Overview -->
+    <section id="tab-overview" class="tab active">
+      <div class="kpis">
+        <div class="kpi"><label>Trials</label><span id="kpi-trials">0</span></div>
+        <div class="kpi"><label>Running</label><span id="kpi-running">0</span></div>
+        <div class="kpi"><label>Completed</label><span id="kpi-completed">0</span></div>
+        <div class="kpi"><label>Errors</label><span id="kpi-errors">0</span></div>
+        <div class="kpi"><label>Host CPU%</label><span id="kpi-cpu">–</span></div>
+        <div class="kpi"><label>Host Mem%</label><span id="kpi-mem">–</span></div>
+      </div>
+      <table id="trials-table">
+        <thead>
+          <tr>
+            <th>Trial</th>
+            <th>Attempt</th>
+            <th>Agent</th>
+            <th>Status</th>
+            <th>Agents</th>
+            <th>LLM</th>
+            <th>Tools</th>
+            <th>Last evt</th>
+            <th>Reward</th>
+            <th>Errs</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Trial detail -->
+    <section id="tab-trial" class="tab">
+      <div class="trial-picker">
+        <label>Trial: <select id="trial-select"></select></label>
+        <button id="trial-refresh">refresh</button>
+        <span id="trial-meta"></span>
+      </div>
+      <div id="trial-detail">
+        <div class="empty">Select a trial.</div>
+      </div>
+    </section>
+
+    <!-- Event-detail modal -->
+    <div id="event-modal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-panel">
+        <div class="modal-head">
+          <span id="modal-title">event</span>
+          <button id="modal-close">×</button>
+        </div>
+        <pre id="modal-body"></pre>
+      </div>
+    </div>
+
+    <!-- Errors -->
+    <section id="tab-errors" class="tab">
+      <table id="errors-table">
+        <thead>
+          <tr>
+            <th>Trial</th>
+            <th>Run</th>
+            <th>Time</th>
+            <th>Rule</th>
+            <th>Snippet</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script src="static/app.js?v=20260914-relpaths"></script>
+</body>
+</html>

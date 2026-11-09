@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+*.egg-info/
+
+# Env & secrets
+.env
+.env.*
+
+# Data (large files, not versioned)
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+.pytest_cache
+
+# Claude Code per-user state (settings, scheduled task locks, …). Keep the
+# reusable Docker stream merger skill in Git while leaving other local state
+# and unpublished skills ignored.
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/docker-stream-merger/
+!.claude/skills/docker-stream-merger/**
+
+# Local scratch / WIP
+tmp/
+notes/
+jobs/
+results/
+.refine-runs/
+
+# Repo-root experiment scratch only — docs/experiments stays tracked elsewhere.
+# scripts/experiments/ is now ignored entirely (per-experiment scratch).
+/experiments/
+scripts/experiments/
+# Temporary process/snapshot scratch files (some tooling creates these)
+scripts/.ps__*
+
+# Personal prompts / instructions to AI (not for sharing)
+prompts/
+
+# Personal AI assistant scratch files (Claude Code / harness AGENTS.md)
+CLAUDE.md
+AGENTS.md
+
+# 实验报告（本地分析快照，不入库）
+docs/experiments/
+
+# Upstream Kimi Code CLI reference checkout (plain clone, not a submodule yet).
+# Promote to an AOS-Bench fork + submodule only when the kimi-code arm needs
+# local patches; until then it is a read-only reference for adapter work.
+aos_bench/harness/kimi-code/

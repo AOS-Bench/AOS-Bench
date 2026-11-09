@@ -1,0 +1,50 @@
+# Smallest possible test manifest: regenerate the existing
+# data/test_tasks_stream/fix-git-prove-plus-comm-openssl-stream from upstream
+# TB-2 sources. Used by the roundtrip test.
+#
+# All three TB-2 source Dockerfiles use slightly different bases. We pick
+# ubuntu:24.04 (matches prove-plus-comm and openssl-selfsigned-cert) and let
+# fix-git's `python:3.13-slim-bookworm` base be replaced — its Python deps are
+# pulled in via apt below.
+
+[stream]
+name        = "mini-tb2-3"
+description = "TB-2 fix-git + prove-plus-comm + openssl-selfsigned-cert merged into one stream."
+author      = "aos-bench task_construction"
+
+[environment]
+cpus              = 2
+memory_mb         = 4096
+allow_internet    = false
+base_image        = "ubuntu:24.04"
+accept_mixed_from = true
+extra_apt_packages = [
+    "ca-certificates",
+    "coq",
+    "curl",
+    "git",
+    "openssl",
+    "python3",
+    "python3-pip",
+]
+
+[session]
+max_steps = 40
+
+[[tasks]]
+source             = "<CACHE_ROOT>/terminal-bench-2/fix-git"
+pool               = "swe"
+task_id            = "fix-git"
+arrive_wall_time   = 0
+
+[[tasks]]
+source             = "<CACHE_ROOT>/terminal-bench-2/prove-plus-comm"
+pool               = "sci"
+task_id            = "prove-plus-comm"
+arrive_wall_time   = 90
+
+[[tasks]]
+source             = "<CACHE_ROOT>/terminal-bench-2/openssl-selfsigned-cert"
+pool               = "sec"
+task_id            = "openssl-selfsigned-cert"
+arrive_wall_time   = 180

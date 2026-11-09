@@ -1,0 +1,146 @@
+[
+  {
+    "task_id": "compileagent-botan-3-5-0",
+    "admission_status": "ready",
+    "pool": "CompileAgent",
+    "task_dir": "<REPO>/data/harbor/compileagent/botan-3-5-0",
+    "raw_task_name": "botan-3-5-0",
+    "runs": {"unified_4c8g": {"wall_seconds": 222.813, "cgroup_sample_span_s": 245.0, "cpu_time_cumulative_s": 807.229, "cpu_utilization_ratio": 0.823703, "reward": 1.0, "v1_score": 0.050981, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "zgr-lv/botan-3-5-0__kkEjEdn", "status": "ok"}}
+  },
+  {
+    "task_id": "compileagent-ffmpeg-n7-0",
+    "admission_status": "ready",
+    "pool": "CompileAgent",
+    "task_dir": "<REPO>/data/harbor/compileagent/ffmpeg-n7-0",
+    "raw_task_name": "ffmpeg-n7-0",
+    "runs": {"unified_4c8g": {"wall_seconds": 207.39, "cgroup_sample_span_s": 307.0, "cpu_time_cumulative_s": 642.518, "cpu_utilization_ratio": 0.523223, "reward": 1.0, "v1_score": 0.030142, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "zgr-ca/ffmpeg-n7-0__YbYhpgT", "status": "ok"}}
+  },
+  {
+    "task_id": "compileagent-openssl-3-3-2",
+    "admission_status": "ready",
+    "pool": "CompileAgent",
+    "task_dir": "<REPO>/data/harbor/compileagent/openssl-3-3-2",
+    "raw_task_name": "openssl-3-3-2",
+    "runs": {"unified_4c8g": {"wall_seconds": 296.107, "cgroup_sample_span_s": 352.0, "cpu_time_cumulative_s": 479.508, "cpu_utilization_ratio": 0.34056, "reward": 1.0, "v1_score": 0.028012, "v1_tier": "L2", "cpu_tier": "L2", "source_run": "zgr-ca/openssl-3-3-2__AariJwz", "status": "ok"}}
+  },
+  {
+    "task_id": "compileagent-box64-v0-3-0",
+    "admission_status": "ready",
+    "pool": "CompileAgent",
+    "task_dir": "<REPO>/data/harbor/compileagent/box64-v0-3-0",
+    "raw_task_name": "box64-v0-3-0",
+    "runs": {"unified_4c8g": {"wall_seconds": 138.569, "cgroup_sample_span_s": 246.0, "cpu_time_cumulative_s": 207.333, "cpu_utilization_ratio": 0.210704, "reward": 1.0, "v1_score": 0.00811, "v1_tier": "L1", "cpu_tier": "L2", "source_run": "zgr-ca/box64-v0-3-0__UgisWHk", "status": "ok"}}
+  },
+  {
+    "task_id": "compileagent-boringssl-0-20240913",
+    "admission_status": "ready",
+    "pool": "CompileAgent",
+    "task_dir": "<REPO>/data/harbor/compileagent/boringssl-0-20240913",
+    "raw_task_name": "boringssl-0-20240913",
+    "runs": {"unified_4c8g": {"wall_seconds": 143.468, "cgroup_sample_span_s": 232.0, "cpu_time_cumulative_s": 212.201, "cpu_utilization_ratio": 0.228664, "reward": 1.0, "v1_score": 0.009113, "v1_tier": "L1", "cpu_tier": "L2", "source_run": "zgr-ca/boringssl-0-20240913__oYWBxup", "status": "ok"}}
+  },
+  {
+    "task_id": "onebrc-400m",
+    "admission_status": "ready",
+    "pool": "OneBRC",
+    "task_dir": "<REPO>/data/harbor/onebrc/onebrc-400m",
+    "raw_task_name": "onebrc-400m",
+    "runs": {"unified_4c8g": {"wall_seconds": 1377.118, "cgroup_sample_span_s": 1423.0, "cpu_time_cumulative_s": 1348.874, "cpu_utilization_ratio": 0.236977, "reward": 1.0, "v1_score": 0.090652, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "zgr-ext/onebrc-400m__QQYPUwE", "status": "ok"}}
+  },
+  {
+    "task_id": "pareval-00-dense-la-lu-decomp",
+    "admission_status": "ready",
+    "pool": "ParEval",
+    "task_dir": "<REPO>/data/harbor/pareval/00_dense_la_lu_decomp",
+    "raw_task_name": "00_dense_la_lu_decomp",
+    "runs": {"unified_4c8g": {"wall_seconds": 122.466, "cgroup_sample_span_s": 258.0, "cpu_time_cumulative_s": 358.103, "cpu_utilization_ratio": 0.346999, "reward": 1.0, "v1_score": 0.011804, "v1_tier": "L1", "cpu_tier": "L2", "source_run": "zgr-ext/00_dense_la_lu_decomp__RhNj7jt", "status": "ok"}}
+  },
+  {
+    "task_id": "compilebench-curl-ssl-arm64-static-heavy",
+    "admission_status": "needs_adaptation",
+    "pool": "CompileBench",
+    "task_dir": "<REPO>/data/harbor/compilebench/curl-ssl-arm64-static-heavy",
+    "raw_task_name": "curl-ssl-arm64-static-heavy",
+    "runs": {"unified_4c8g": {"wall_seconds": 884.297, "cgroup_sample_span_s": 977.0, "cpu_time_cumulative_s": 1671.238, "cpu_utilization_ratio": 0.427645, "reward": null, "v1_score": 0.105046, "v1_tier": "L3", "cpu_tier": "L3", "source_run": "zgr-var/curl-ssl-arm64-static-heavy__ecHpXEN", "status": "verifier_disabled"}}
+  },
+  {
+    "task_id": "skillsbench-exoplanet-detection-period-heavy",
+    "admission_status": "needs_adaptation",
+    "pool": "skillsbench",
+    "task_dir": "<REPO>/data/harbor/skillsbench/tasks/exoplanet-detection-period-heavy",
+    "raw_task_name": "exoplanet-detection-period-heavy",
+    "runs": {"unified_4c8g": {"wall_seconds": 632.505, "cgroup_sample_span_s": 719.0, "cpu_time_cumulative_s": 1648.652, "cpu_utilization_ratio": 0.573245, "reward": null, "v1_score": 0.100717, "v1_tier": "L3", "cpu_tier": "L3", "source_run": "zgr-var/exoplanet-detection-period-heavy__a57xTMw", "status": "verifier_disabled"}}
+  },
+  {
+    "task_id": "skillsbench-mars-clouds-clustering-heavy",
+    "admission_status": "needs_adaptation",
+    "pool": "skillsbench",
+    "task_dir": "<REPO>/data/harbor/skillsbench/tasks/mars-clouds-clustering-heavy",
+    "raw_task_name": "mars-clouds-clustering-heavy",
+    "runs": {"unified_4c8g": {"wall_seconds": 404.169, "cgroup_sample_span_s": 452.0, "cpu_time_cumulative_s": 1135.132, "cpu_utilization_ratio": 0.627839, "reward": null, "v1_score": 0.070487, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "zgr-var/mars-clouds-clustering-heavy__kp3gZic", "status": "verifier_disabled"}}
+  },
+  {
+    "task_id": "llvmfix-100464",
+    "admission_status": "needs_adaptation",
+    "pool": "LLVMFix",
+    "task_dir": "<REPO>/data/harbor/llvmfix/100464",
+    "raw_task_name": "100464",
+    "runs": {"unified_4c8g": {"wall_seconds": 1205.973, "cgroup_sample_span_s": 1257.0, "cpu_time_cumulative_s": 442.07, "cpu_utilization_ratio": 0.087922, "reward": 1.0, "v1_score": 0.029453, "v1_tier": "L2", "cpu_tier": "L2", "source_run": "zgr-lv/100464__Fg3RCuu", "status": "ok"}}
+  },
+  {
+    "task_id": "llvmfix-101213",
+    "admission_status": "needs_adaptation",
+    "pool": "LLVMFix",
+    "task_dir": "<REPO>/data/harbor/llvmfix/101213",
+    "raw_task_name": "101213",
+    "runs": {"unified_4c8g": {"wall_seconds": 773.516, "cgroup_sample_span_s": 806.0, "cpu_time_cumulative_s": 436.494, "cpu_utilization_ratio": 0.135389, "reward": 0.0, "v1_score": 0.02909, "v1_tier": "L2", "cpu_tier": "L2", "source_run": "zgr-lv/101213__ZtPrwEh", "status": "verifier_failed"}}
+  },
+  {
+    "task_id": "llvmfix-106780",
+    "admission_status": "needs_adaptation",
+    "pool": "LLVMFix",
+    "task_dir": "<REPO>/data/harbor/llvmfix/106780",
+    "raw_task_name": "106780",
+    "runs": {"unified_4c8g": {"wall_seconds": 997.118, "cgroup_sample_span_s": 1043.0, "cpu_time_cumulative_s": 1154.046, "cpu_utilization_ratio": 0.276617, "reward": 0.0, "v1_score": 0.076617, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "zgr-lv/106780__dBf4Lad", "status": "verifier_failed"}}
+  },
+  {
+    "task_id": "terminalworld-tw-245032",
+    "admission_status": "needs_adaptation",
+    "pool": "TerminalWorld",
+    "task_dir": "<REPO>/data/harbor/terminalworld-converted-no-mirrors/tw_245032",
+    "raw_task_name": "tw_245032",
+    "runs": {"unified_4c8g": {"wall_seconds": 2348.02, "cgroup_sample_span_s": 2390.646, "cpu_time_cumulative_s": 1436.3, "cpu_utilization_ratio": 0.1502, "reward": 0.0, "v1_score": 0.097965, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "terminalworld/tw_245032__oegmmWq", "status": "verifier_failed"}}
+  },
+  {
+    "task_id": "terminalworld-tw-355252",
+    "admission_status": "needs_adaptation",
+    "pool": "TerminalWorld",
+    "task_dir": "<REPO>/data/harbor/terminalworld-converted-no-mirrors/tw_355252",
+    "raw_task_name": "tw_355252",
+    "runs": {"unified_4c8g": {"wall_seconds": 4467.311, "cgroup_sample_span_s": 4511.885, "cpu_time_cumulative_s": 6453.8, "cpu_utilization_ratio": 0.3576, "reward": 1.0, "v1_score": 0.3576, "v1_tier": "L3", "cpu_tier": "L3", "source_run": "terminalworld/tw_355252__95BCCcJ", "status": "ok"}}
+  },
+  {
+    "task_id": "terminalworld-tw-528959",
+    "admission_status": "needs_adaptation",
+    "pool": "TerminalWorld",
+    "task_dir": "<REPO>/data/harbor/terminalworld-converted-no-mirrors/tw_528959",
+    "raw_task_name": "tw_528959",
+    "runs": {"unified_4c8g": {"wall_seconds": 656.744, "cgroup_sample_span_s": 701.974, "cpu_time_cumulative_s": 953.0, "cpu_utilization_ratio": 0.3394, "reward": 1.0, "v1_score": 0.061916, "v1_tier": "L2", "cpu_tier": "L3", "source_run": "terminalworld/tw_528959__mwNbjAZ", "status": "ok"}}
+  },
+  {
+    "task_id": "terminalworld-tw-593620",
+    "admission_status": "needs_adaptation",
+    "pool": "TerminalWorld",
+    "task_dir": "<REPO>/data/harbor/terminalworld-converted-no-mirrors/tw_593620",
+    "raw_task_name": "tw_593620",
+    "runs": {"unified_4c8g": {"wall_seconds": 1870.951, "cgroup_sample_span_s": 1927.077, "cpu_time_cumulative_s": 2431.2, "cpu_utilization_ratio": 0.3154, "reward": 1.0, "v1_score": 0.163916, "v1_tier": "L3", "cpu_tier": "L3", "source_run": "terminalworld/tw_593620__wBQbFKa", "status": "ok"}}
+  },
+  {
+    "task_id": "terminalworld-tw-690306",
+    "admission_status": "needs_adaptation",
+    "pool": "TerminalWorld",
+    "task_dir": "<REPO>/data/harbor/terminalworld-converted-no-mirrors/tw_690306",
+    "raw_task_name": "tw_690306",
+    "runs": {"unified_4c8g": {"wall_seconds": 359.589, "cgroup_sample_span_s": 422.033, "cpu_time_cumulative_s": 367.0, "cpu_utilization_ratio": 0.2174, "reward": 1.0, "v1_score": 0.021715, "v1_tier": "L2", "cpu_tier": "L2", "source_run": "terminalworld/tw_690306__rvPVxxb", "status": "ok"}}
+  }
+]

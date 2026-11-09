@@ -1,0 +1,5 @@
+{"role":"meta","type":"system.version","version":"0.36.1"}
+{"role":"assistant","tool_calls":[{"type":"function","id":"call_swarm_1","function":{"name":"AgentSwarm","arguments":"{\"description\":\"probe swarm\",\"subagent_type\":\"coder\",\"prompt_template\":\"Say the word {{item}} and stop.\",\"items\":[\"alpha\",\"beta\"]}"}}]}
+{"role":"tool","tool_call_id":"call_swarm_1","content":"<agent_swarm_result>\n<summary>completed: 2</summary>\n<subagent agent_id=\"agent-0\" item=\"alpha\" outcome=\"completed\">reply 5. done.</subagent>\n<subagent agent_id=\"agent-1\" item=\"beta\" outcome=\"completed\">reply 3. done.</subagent>\n</agent_swarm_result>"}
+{"role":"assistant","content":"reply 6. done."}
+{"role":"meta","type":"session.resume_hint","session_id":"session_76ca8fe9-b9a6-49d2-a537-af91933d66f7","command":"kimi -r session_76ca8fe9-b9a6-49d2-a537-af91933d66f7","content":"To resume this session: kimi -r session_76ca8fe9-b9a6-49d2-a537-af91933d66f7"}

@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-08-17T15:59:20.237Z",
+  "updatedAt": "2026-08-17T15:59:20.297Z",
+  "title": "say done",
+  "isCustomTitle": false,
+  "agents": {
+    "main": {
+      "homedir": "/home/user/.claude/jobs/667423f9/tmp/kc-home-m2/sessions/wd_work_legacy_4666df4d9913/session_29bfffee-2f70-4944-9bac-8f0bf21d8d21/agents/main",
+      "type": "main",
+      "parentAgentId": null
+    }
+  },
+  "custom": {},
+  "workDir": "/home/user/.claude/jobs/667423f9/tmp/work_legacy",
+  "lastPrompt": "say done"
+}

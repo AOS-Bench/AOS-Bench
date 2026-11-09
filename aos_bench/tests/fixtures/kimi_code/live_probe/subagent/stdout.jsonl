@@ -1,0 +1,5 @@
+{"role":"meta","type":"system.version","version":"0.36.1"}
+{"role":"assistant","tool_calls":[{"type":"function","id":"call_agent_1","function":{"name":"Agent","arguments":"{\"prompt\":\"Say hello and stop.\",\"description\":\"probe sub\",\"subagent_type\":\"coder\"}"}}]}
+{"role":"tool","tool_call_id":"call_agent_1","content":"agent_id: agent-0\nactual_subagent_type: coder\nstatus: completed\n\n[summary]\nreply 3. done."}
+{"role":"assistant","content":"reply 4. done."}
+{"role":"meta","type":"session.resume_hint","session_id":"session_4f698826-24d3-4419-adeb-a253107b6a05","command":"kimi -r session_4f698826-24d3-4419-adeb-a253107b6a05","content":"To resume this session: kimi -r session_4f698826-24d3-4419-adeb-a253107b6a05"}

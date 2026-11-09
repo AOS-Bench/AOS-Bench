@@ -1,0 +1,1 @@
+{"taskId":"agent-g7xgrry2","description":"probe sub","status":"completed","detached":true,"startedAt":1786981873556,"endedAt":1786981873594,"timeoutMs":0,"kind":"agent","agentId":"agent-0","subagentType":"coder","parentToolCallId":"call_agent_1","model":"__kimi_env_model__","thinkingEffort":"on"}

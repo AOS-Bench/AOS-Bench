@@ -1,0 +1,69 @@
+# Reconstructed manifest for the V1-0 stream `light-5-scan-001`.
+#
+# The frozen stream directory carries no manifest.toml, so this was rebuilt
+# from stream.toml (name/description/author, environment, session, arrival
+# times) plus the per-slot provenance comments in the merged Dockerfile
+# ("# === <task_id> (pool=<pool>, source=<dir>) ===").
+#
+# Each `source` was verified byte-identical to the corresponding staged copy
+# under environment/_sources/<task_id>/ before use.
+#
+# Purpose: re-assemble this stream with --pool-v02 so the merged Dockerfile
+# stages task payloads under /aos_internal/sources/<task_id>/ instead of
+# copying them straight into /workspace. Without that, every task's files are
+# visible from t0 and the pool sidecar's staged reveal is a no-op.
+#
+# `source` paths are relative, which assemble.py resolves against THIS file's
+# directory (assemble.py:76-81) — not the cwd. Deliberately different from the
+# older manifests here, whose absolute <HOME>/... paths no longer exist
+# on any current machine and so cannot be re-assembled at all.
+#
+# On a host that cannot reach mirrors.aliyun.com, assemble with
+# AOS_PYPI_EXTRA_INDEX_URL="" — the default extra index is Aliyun and pip
+# stalls on it. Then build with scripts/local/build_stream_cn.sh, which adapts
+# the network without touching the generated stream.
+
+[stream]
+name        = "light-5-scan-001"
+description = "V1-0 low-overlap scan candidate (light); L2=5, L3=0"
+author      = "aos-bench V1-0 low-overlap scan"
+
+[environment]
+cpus           = 4
+memory_mb      = 8192
+allow_internet = true
+base_image       = "ubuntu:24.04"
+accept_mixed_from = true
+
+[session]
+max_steps = 360
+
+[[tasks]]
+source           = "../../../data/harbor/terminalworld-converted-no-mirrors/tw_528959"
+pool             = "terminalworld"
+task_id          = "terminalworld-tw_528959"
+arrive_wall_time = 0
+
+[[tasks]]
+source           = "../../../data/harbor/v1-0-evaluation-sources/skillsbench-python-scala-translation"
+pool             = "skillsbench"
+task_id          = "skillsbench-python-scala-translation"
+arrive_wall_time = 87
+
+[[tasks]]
+source           = "../../../data/harbor/v1-0-evaluation-sources/tb2-tune-mjcf"
+pool             = "tb2"
+task_id          = "tb2-tune-mjcf"
+arrive_wall_time = 184
+
+[[tasks]]
+source           = "../../../data/harbor/v1-0-evaluation-sources/skillsbench-syzkaller-ppdev-syzlang"
+pool             = "skillsbench"
+task_id          = "skillsbench-syzkaller-ppdev-syzlang"
+arrive_wall_time = 240
+
+[[tasks]]
+source           = "../../../data/harbor/terminalworld-converted-no-mirrors/tw_325403"
+pool             = "terminalworld"
+task_id          = "terminalworld-tw_325403"
+arrive_wall_time = 333

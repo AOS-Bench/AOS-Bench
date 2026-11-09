@@ -1,0 +1,23 @@
+# Agent-pack images used by the workload construction pipeline
+# (aos_bench/task_construction). They are not published: build them from
+# images/agents/ and point `registry` and the tags below at your own registry.
+schema_version = 1
+registry = "registry.example.com/terminal-rl"
+
+[agents.claude-code]
+version = "2.1.198"
+tag = "registry.example.com/terminal-rl/aos-agent-claude-code:2.1.198"
+image = "registry.example.com/terminal-rl/aos-agent-claude-code@sha256:84f8840d91e36999833d4708759b8c491f5acf5be72200e980024f4290512733"
+digest = "sha256:84f8840d91e36999833d4708759b8c491f5acf5be72200e980024f4290512733"
+install_path = "/opt/aos-agents/claude-code"
+binary = "claude"
+status = "locked"
+
+[agents.codex]
+version = "0.145.0"
+tag = "registry.example.com/terminal-rl/aos-agent-codex:0.145.0"
+image = "registry.example.com/terminal-rl/aos-agent-codex@sha256:7d5a27740a25cca3b57a84d5a662678ab51b29276840bfddd2c48aa98191828f"
+digest = "sha256:7d5a27740a25cca3b57a84d5a662678ab51b29276840bfddd2c48aa98191828f"
+install_path = "/opt/aos-agents/codex"
+binary = "codex"
+status = "locked"

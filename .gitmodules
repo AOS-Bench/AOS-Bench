@@ -1,0 +1,3 @@
+[submodule "harbor"]
+	path = harbor
+	url = https://github.com/AOS-Bench/Harbor-AOS.git

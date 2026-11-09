@@ -1,0 +1,57 @@
+# AOS-Bench dispatcher image — universal HTTP MCP front for stream tasks.
+#
+# Built once, used for all streams. See docs/framework/task_assign.md (v0.3).
+# Image is ~165 MB: python:3.12-slim + mcp[server] + uvicorn + starlette.
+#
+# Build (README §4):
+#   docker build -t aos-bench/dispatcher:v1 -f aos_bench/pool/Dockerfile.dispatcher .
+#
+# Run (standalone smoke):
+#   docker run --rm -p 8765:8765 \
+#     -v $PWD/_dispatcher_logs:/logs/dispatcher \
+#     aos-bench/dispatcher:v1
+FROM python:3.12-slim
+
+ENV PIP_BREAK_SYSTEM_PACKAGES=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+# Upper bounds are load-bearing. These four pins are the only dependency
+# declaration for the pool module — no pyproject/lockfile covers them, so
+# an unbounded ">=" silently follows upstream forever. mcp 2.0 dropped the
+# mcp.server.fastmcp module that server.py imports (both FastMCP itself and
+# server.TransportSecuritySettings), which builds clean and then fails at
+# import time inside the container. Bump these deliberately, not by accident.
+#
+# Resolved in the dispatcher-v1 image (2026-08-24):
+#   mcp 1.29.0  uvicorn 0.52.4  starlette 1.6.0  fastapi 0.141.1
+# Note starlette had already drifted across a major version on its own, which
+# is why all four are bounded and not just mcp.
+RUN pip install --no-cache-dir \
+        "mcp[server]>=1.2,<2" \
+        "uvicorn>=0.30,<1" \
+        "starlette>=0.37,<2" \
+        "fastapi>=0.115,<1"
+
+# Pool source — only pool.py, server.py, dispatcher.py are needed.
+# We deliberately do NOT bundle the full aos_bench package; the
+# dispatcher container is independent of the agent's image surface.
+WORKDIR /opt/aos_bench/pool
+COPY aos_bench/pool/pool.py        ./pool.py
+COPY aos_bench/pool/server.py      ./server.py
+COPY aos_bench/pool/dispatcher.py  ./dispatcher.py
+
+# Persisted state goes here (host-mounted by harbor at runtime).
+RUN install -d -m 0755 /logs/dispatcher
+
+# MCP + admin traffic share port 8765. Admin endpoints are gated by the
+# ADMIN_TOKEN env var (Bearer token); harbor knows the token, the agent
+# does not.
+EXPOSE 8765
+
+# Healthcheck against /healthz (anonymous, exposes no state).
+HEALTHCHECK --interval=10s --timeout=3s --start-period=5s --retries=3 \
+  CMD python -c "import urllib.request,sys; \
+sys.exit(0 if urllib.request.urlopen('http://127.0.0.1:8765/healthz', timeout=2).status==200 else 1)"
+
+CMD ["python", "/opt/aos_bench/pool/dispatcher.py"]
